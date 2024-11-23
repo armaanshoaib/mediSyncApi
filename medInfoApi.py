@@ -5,7 +5,7 @@ from flask_cors import CORS  # Add CORS support for cross-origin requests
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-client = Groq(api_key="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")
+client = Groq(api_key="gsk_API_KEY")
 
 @app.route('/get_med_info', methods=['POST'])
 def get_med_info():
@@ -37,4 +37,4 @@ def get_med_info():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, host="0.0.0.0", port=6210)
